@@ -3,24 +3,27 @@
 use PHPUnit\Framework\TestCase;
 use jonas\serachcep\Search;
 
-class SearchTest extends TestCase{
+class SearchTest extends TestCase
+{
 
   /**
    * @dataProvider dadosTeste
    */
 
    //ra requisição vão vim dois paramentros, o primeiro é uma string(cep) e  segundo o valor da consulta que é um array($esperado)
-  public function testGetAdressFromZipCodeDeafaultUsage(string $input, array $esperado){
-    //recomendasse usar o test antes do nome da função que se vai testar e o fim usar o Deafultusage
-   $resultado = new Search();
-   $resultado = $resultado->getAdressFromZipCode($input);//cep usado como parametro da busca
+    public function testGetAdressFromZipCodeDeafaultUsage(string $input, array $esperado)
+    {
+      //recomendasse usar o test antes do nome da função que se vai testar e o fim usar o Deafultusage
+        $resultado = new Search();
+        $resultado = $resultado->getAdressFromZipCode($input);//cep usado como parametro da busca
 
-   $this->assertEquals($esperado,$resultado);
-  } 
+        $this->assertEquals($esperado, $resultado);
+    }
 
-  public function dadosTeste(){
-    return [
-      "Endereço Praça da sé" => [
+    public function dadosTeste()
+    {
+        return [
+        "Endereço Praça da sé" => [
         "01001000",
         [
           "cep" => "01001-000",
@@ -33,7 +36,7 @@ class SearchTest extends TestCase{
           "gia" => "1004",
           "ddd" => "11",
           "siafi" => "7107"
-  
+
         ]
         ],
         "Endereço qualquer" => [
@@ -48,10 +51,10 @@ class SearchTest extends TestCase{
             "ibge" => "3550308",
             "gia" => "1004",
             "ddd" => "11",
-            "siafi" => "7107"    
+            "siafi" => "7107"
           ],
         ]
-  
-  ];
-  }
+
+        ];
+    }
 }
