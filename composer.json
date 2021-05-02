@@ -1,0 +1,23 @@
+{
+    "name": "jonas/serachcep",
+    "description": "Buscar cpe online",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "miguelgabriel01",
+            "email": "mgbs@discente.ifpe.edu.br"
+        }
+    ],
+    "require": {
+        "php":">=7.2.0"
+    },
+    "autoload":{
+        "psr-0":{
+            "Search":"src/"
+        },
+        "psr-4":{
+            "jonas\\serachcep\\":"src/"
+        }
+    }
+}
